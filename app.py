@@ -19,8 +19,8 @@ def generate_pdf(json_url):
         with open("temp.html", "w") as f:
             f.write(html)
 
-        # Provide the path to wkhtmltopdf
-        pdfkit.from_file("temp.html", "report.pdf", configuration=pdfkit.configuration(wkhtmltopdf='/path/to/wkhtmltopdf'))
+        # Generate PDF report
+        pdfkit.from_file("temp.html", "report.pdf")
 
         st.success("PDF report generated successfully!")
     except Exception as e:
